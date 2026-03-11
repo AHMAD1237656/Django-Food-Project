@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Catagories</h2>
+<ul>
+    {% for catagory in categories %}
+        <li><a href="{% url 'menu:product' catagory.slug %}">{{ catagory.name }}</a></li>
+    {% empty %}
+        <li>No catagories found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

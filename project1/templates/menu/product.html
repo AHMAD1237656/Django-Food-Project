@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ catagory.name }} Products</h2>
+<ul>
+    {% for product in products %}
+        <li>
+            <a href="{% url 'menu:detail' product.slug %}">{{ product.name }}</a> - ${{ product.price }}
+        </li>
+    {% empty %}
+        <li>No products found in this catagory.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
